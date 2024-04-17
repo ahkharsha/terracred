@@ -61,7 +61,7 @@ class _ImageChatState extends State<ImageChat> {
       setState(() {
         loading = false;
         textAndImageChat.add({
-          "role":  translation(context).aiDoc,
+          "role": translation(context).aiDoc,
           "text": error.toString(),
           "image": "",
           "avatar": "AI",
@@ -90,7 +90,7 @@ class _ImageChatState extends State<ImageChat> {
                   isThreeLine: true,
                   leading: CircleAvatar(
                     child:
-                        Text(textAndImageChat[index]["avatar"].substring(0,2)),
+                        Text(textAndImageChat[index]["avatar"].substring(0, 2)),
                   ),
                   title: Text(textAndImageChat[index]["role"]),
                   subtitle: Text(textAndImageChat[index]["text"]),
@@ -129,7 +129,10 @@ class _ImageChatState extends State<ImageChat> {
                   ),
                 ),
                 IconButton(
-                  icon: const Icon(Icons.add_a_photo, color: Color.fromARGB(255, 93, 11, 82),),
+                  icon: const Icon(
+                    Icons.add_a_photo,
+                    color: Color.fromARGB(255, 93, 11, 82),
+                  ),
                   onPressed: () async {
                     final XFile? image =
                         await picker.pickImage(source: ImageSource.gallery);
@@ -141,7 +144,10 @@ class _ImageChatState extends State<ImageChat> {
                 IconButton(
                   icon: loading
                       ? const CircularProgressIndicator()
-                      : const Icon(Icons.send, color: Color.fromARGB(255, 93, 11, 82),),
+                      : const Icon(
+                          Icons.send,
+                          color: Color.fromARGB(255, 93, 11, 82),
+                        ),
                   onPressed: () {
                     if (imageFile == null) {
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
@@ -170,4 +176,3 @@ class _ImageChatState extends State<ImageChat> {
     );
   }
 }
-

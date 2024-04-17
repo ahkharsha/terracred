@@ -51,26 +51,26 @@ class _ChatScreenState extends State<ChatScreen> {
                 ],
               ),
             ),
-            floatingActionButton: Padding(
-                padding: EdgeInsets.only(bottom: 35.h, right: 5.0),
-                child: FloatingActionButton(
-                  onPressed: () {
-                    showModalBottomSheet<void>(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return InstaShareBottomSheet();
-                      },
-                    );
-                  },
-                  backgroundColor: Colors.red,
-                  foregroundColor: boxColor,
-                  highlightElevation: 50,
-                  child: Icon(
-                    Icons.warning_outlined,
-                  ),
-                ),
-              ),
-              floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+            // floatingActionButton: Padding(
+            //     padding: EdgeInsets.only(bottom: 35.h, right: 5.0),
+            //     child: FloatingActionButton(
+            //       onPressed: () {
+            //         showModalBottomSheet<void>(
+            //           context: context,
+            //           builder: (BuildContext context) {
+            //             return InstaShareBottomSheet();
+            //           },
+            //         );
+            //       },
+            //       backgroundColor: Colors.red,
+            //       foregroundColor: boxColor,
+            //       highlightElevation: 50,
+            //       child: Icon(
+            //         Icons.warning_outlined,
+            //       ),
+            //     ),
+            //   ),
+            //   floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
             body: const TabBarView(
               physics: NeverScrollableScrollPhysics(),
               children: [

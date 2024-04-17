@@ -16,15 +16,15 @@ const String pregathiAboutUsLink= "https://ahkharsha.github.io/assets/pregAthI/v
 String pregathiSupportEmail= 'pregathi2024@gmail.com';
 
 const apiKey = "AIzaSyCAYDrBcb41UV2-2inRihCUS80VdRWv6vs";
-const bannerDefault = 'https://img.freepik.com/free-vector/young-women-group-standing-camp_25030-39599.jpg';
+const bannerDefault = 'https://st.adda247.com/https://wpassets.adda247.com/wp-content/uploads/multisite/sites/5/2023/10/16083857/1_bVM9Tl6tPhfZ2nmKfaB-0A.jpg';
 const avatarDefault =
-    'https://cdn-icons-png.flaticon.com/512/1474/1474494.png';
+    'https://bsmedia.business-standard.com/_media/bs/img/article/2021-06/05/full/1622854444-6718.jpg?im=FeatureCrop,size=(826,465)';
 
 const wifeProfileDefault =
-    'https://cdn-icons-png.flaticon.com/512/4406/4406029.png';
+    'https://cdn.icon-icons.com/icons2/2468/PNG/512/user_icon_149329.png';
 
 const volunteerProfileDefault =
-    'https://cdn-icons-png.flaticon.com/512/9337/9337706.png';
+    'https://t4.ftcdn.net/jpg/02/72/39/87/360_F_272398712_z28EMWLbM9Y8zojg51tLZo4D8Ju3R7EG.jpg';
 
 const musicImageDefault = 'https://media.wired.com/photos/5926df59f3e2356fd800ab80/master/w_1920,c_limit/GettyImages-543338600-S2.jpg';
 

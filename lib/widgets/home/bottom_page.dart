@@ -28,12 +28,12 @@ class _BottomPageState extends State<BottomPage> {
   void initState() {
     super.initState();
     uid = FirebaseAuth.instance.currentUser!.uid;
-    currentIndex = 0;
+    currentIndex = 2;
     pages = [
-      WifeHomeScreen(),
-      ContactsScreen(),
-      CommunityHome(),
       ChatScreen(),
+      ContactsScreen(),
+      WifeHomeScreen(),
+      CommunityHome(),
       WifeProfileScreen(),
     ];
   }
@@ -85,16 +85,16 @@ class _BottomPageState extends State<BottomPage> {
           index: currentIndex,
           items: const [
             CurvedNavigationBarItem(
+              child: Icon(Icons.mark_chat_unread_rounded, color: Colors.white),
+            ),
+            CurvedNavigationBarItem(
+              child: Icon(Icons.place_rounded, color: Colors.white),
+            ),
+            CurvedNavigationBarItem(
               child: Icon(Icons.home, color: Colors.white),
             ),
             CurvedNavigationBarItem(
-              child: Icon(Icons.contacts, color: Colors.white),
-            ),
-            CurvedNavigationBarItem(
               child: Icon(Icons.groups, color: Colors.white),
-            ),
-            CurvedNavigationBarItem(
-              child: Icon(Icons.mark_chat_unread_rounded, color: Colors.white),
             ),
             CurvedNavigationBarItem(
               child: Icon(Icons.person, color: Colors.white),

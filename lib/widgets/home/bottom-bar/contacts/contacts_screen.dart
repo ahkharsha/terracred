@@ -24,31 +24,31 @@ class _ContactsScreenState extends State<ContactsScreen> {
           onPressed: () => goBack(context),
         ),
         title: Text(
-          translation(context).trustedContacts,
+          'Events',
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         centerTitle: false,
         backgroundColor: primaryColor,
       ),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 5.0, right: 5.0),
-        child: FloatingActionButton(
-          onPressed: () {
-            showModalBottomSheet<void>(
-              context: context,
-              builder: (BuildContext context) {
-                return InstaShareBottomSheet();
-              },
-            );
-          },
-          backgroundColor: Colors.red,
-          foregroundColor: boxColor,
-          highlightElevation: 50,
-          child: Icon(
-            Icons.warning_outlined,
-          ),
-        ),
-      ),
+      // floatingActionButton: Padding(
+      //   padding: const EdgeInsets.only(bottom: 5.0, right: 5.0),
+      //   child: FloatingActionButton(
+      //     onPressed: () {
+      //       showModalBottomSheet<void>(
+      //         context: context,
+      //         builder: (BuildContext context) {
+      //           return InstaShareBottomSheet();
+      //         },
+      //       );
+      //     },
+      //     backgroundColor: Colors.red,
+      //     foregroundColor: boxColor,
+      //     highlightElevation: 50,
+      //     child: Icon(
+      //       Icons.warning_outlined,
+      //     ),
+      //   ),
+      // ),
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.all(20.0),

@@ -11,6 +11,8 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:intl/intl.dart';
 import 'package:terracred/bottom-sheet/insta_share_bottom_sheet.dart';
+import 'package:terracred/carousel/events_carousel.dart';
+import 'package:terracred/carousel/news_carousel.dart';
 import 'package:terracred/const/constants.dart';
 import 'package:terracred/db/shared_pref.dart';
 import 'package:terracred/main-screens/drawers/wife/profile_drawer.dart';
@@ -19,10 +21,8 @@ import 'package:terracred/multi-language/classes/language_constants.dart';
 import 'package:terracred/navigators.dart';
 import 'package:terracred/user_permission.dart';
 import 'package:terracred/widgets/home/ai-chat/ai_chat.dart';
-import 'package:terracred/widgets/home/emergency.dart';
 import 'package:terracred/widgets/home/services.dart';
 import 'package:terracred/widgets/home/insta_share/insta_share.dart';
-import 'package:terracred/widgets/home/wife-drawer/cards/quote_card.dart';
 import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -387,7 +387,7 @@ class _WifeHomeScreenState extends ConsumerState<WifeHomeScreen> {
       key: _scaffoldKey,
       appBar: AppBar(
         title: Text(
-          translation(context).pregAthI,
+          'TerraCred',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.white,
@@ -426,25 +426,25 @@ class _WifeHomeScreenState extends ConsumerState<WifeHomeScreen> {
       ),
       drawer: WifeOptionsDrawer(),
       endDrawer: WifeProfileDrawer(),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 5.0, right: 5.0),
-        child: FloatingActionButton(
-          onPressed: () {
-            showModalBottomSheet<void>(
-              context: context,
-              builder: (BuildContext context) {
-                return InstaShareBottomSheet();
-              },
-            );
-          },
-          backgroundColor: Colors.red,
-          foregroundColor: boxColor,
-          highlightElevation: 50,
-          child: Icon(
-            Icons.warning_outlined,
-          ),
-        ),
-      ),
+      // floatingActionButton: Padding(
+      //   padding: const EdgeInsets.only(bottom: 5.0, right: 5.0),
+      //   child: FloatingActionButton(
+      //     onPressed: () {
+      //       showModalBottomSheet<void>(
+      //         context: context,
+      //         builder: (BuildContext context) {
+      //           return InstaShareBottomSheet();
+      //         },
+      //       );
+      //     },
+      //     backgroundColor: Colors.red,
+      //     foregroundColor: boxColor,
+      //     highlightElevation: 50,
+      //     child: Icon(
+      //       Icons.warning_outlined,
+      //     ),
+      //   ),
+      // ),
       body: SafeArea(
         child: Column(
           children: [
@@ -484,16 +484,34 @@ class _WifeHomeScreenState extends ConsumerState<WifeHomeScreen> {
                       ],
                     ),
                   ),
-                  QuoteCard(quote: quote),
                   Padding(
                     padding: const EdgeInsets.only(top: 4, bottom: 8, left: 15),
                     child: Text(
-                      translation(context).emergency,
+                      'News',
                       style: TextStyle(
                           fontSize: 15.sp, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  const Emergency(),
+                  Center(
+                    child: NewsCarousel(newsItems: newsItems),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 4, bottom: 8, left: 15),
+                    child: Text(
+                      'Events',
+                      style: TextStyle(
+                          fontSize: 15.sp, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Center(
+                    child: EventsCarousel(eventItems: eventItems),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
                   Padding(
                     padding:
                         const EdgeInsets.only(top: 8.0, bottom: 8, left: 15),

@@ -48,6 +48,27 @@ class _PastEventsState extends State<PastEvents> {
       date: '2023-04-22',
       place: 'Past Place 5',
     ),
+    Event(
+      title: 'Past Event 6',
+      description: 'Description of Past Event 6',
+      time: '6:30 PM',
+      date: '2023-04-23',
+      place: 'Past Place 6',
+    ),
+    Event(
+      title: 'Past Event 7',
+      description: 'Description of Past Event 7',
+      time: '11:15 AM',
+      date: '2023-04-24',
+      place: 'Past Place 7',
+    ),
+    Event(
+      title: 'Past Event 8',
+      description: 'Description of Past Event 8',
+      time: '4:00 PM',
+      date: '2023-04-25',
+      place: 'Past Place 8',
+    ),
   ];
 
   @override
@@ -68,25 +89,25 @@ class _PastEventsState extends State<PastEvents> {
         centerTitle: false,
         backgroundColor: primaryColor,
       ),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 5.0, right: 5.0),
-        child: FloatingActionButton(
-          onPressed: () {
-            showModalBottomSheet<void>(
-              context: context,
-              builder: (BuildContext context) {
-                return InstaShareBottomSheet();
-              },
-            );
-          },
-          backgroundColor: Colors.red,
-          foregroundColor: boxColor,
-          highlightElevation: 50,
-          child: Icon(
-            Icons.warning_outlined,
-          ),
-        ),
-      ),
+      // floatingActionButton: Padding(
+      //   padding: const EdgeInsets.only(bottom: 5.0, right: 5.0),
+      //   child: FloatingActionButton(
+      //     onPressed: () {
+      //       showModalBottomSheet<void>(
+      //         context: context,
+      //         builder: (BuildContext context) {
+      //           return InstaShareBottomSheet();
+      //         },
+      //       );
+      //     },
+      //     backgroundColor: Colors.red,
+      //     foregroundColor: boxColor,
+      //     highlightElevation: 50,
+      //     child: Icon(
+      //       Icons.warning_outlined,
+      //     ),
+      //   ),
+      // ),
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.all(20.0),
@@ -130,4 +151,3 @@ class _PastEventsState extends State<PastEvents> {
     );
   }
 }
-

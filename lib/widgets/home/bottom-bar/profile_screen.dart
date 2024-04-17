@@ -101,33 +101,31 @@ class _WifeProfileScreenState extends State<WifeProfileScreen> {
           ),
         ],
       ),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 10.0, right: 10.0),
-        child: FloatingActionButton(
-          onPressed: () {
-            showModalBottomSheet<void>(
-              context: context,
-              builder: (BuildContext context) {
-                return InstaShareBottomSheet();
-              },
-            );
-          },
-          backgroundColor: Colors.red,
-          foregroundColor: boxColor,
-          highlightElevation: 50,
-          child: Icon(
-            Icons.warning_outlined,
-          ),
-        ),
-      ),
+      // floatingActionButton: Padding(
+      //   padding: const EdgeInsets.only(bottom: 10.0, right: 10.0),
+      //   child: FloatingActionButton(
+      //     onPressed: () {
+      //       showModalBottomSheet<void>(
+      //         context: context,
+      //         builder: (BuildContext context) {
+      //           return InstaShareBottomSheet();
+      //         },
+      //       );
+      //     },
+      //     backgroundColor: Colors.red,
+      //     foregroundColor: boxColor,
+      //     highlightElevation: 50,
+      //     child: Icon(
+      //       Icons.warning_outlined,
+      //     ),
+      //   ),
+      // ),
       body: isSaving
           ? progressIndicator(context)
           : SingleChildScrollView(
               child: Column(
                 children: <Widget>[
                   _buildProfileHeader(),
-                  _buildPregnancyTracker(),
-                  _buildHealthSection(),
                   _buildDeleteAccountButton(),
                 ],
               ),
@@ -165,17 +163,6 @@ class _WifeProfileScreenState extends State<WifeProfileScreen> {
                       InputDecoration(labelText: translation(context).name),
                   style: const TextStyle(
                       fontSize: 22, fontWeight: FontWeight.bold),
-                ),
-                TextFormField(
-                  controller: _weekController,
-                  decoration: InputDecoration(
-                      labelText: translation(context).weekOfPregnancy),
-                  style: const TextStyle(fontSize: 18),
-                ),
-                TextFormField(
-                  controller: _totalWeekController,
-                  decoration: InputDecoration(labelText: 'Total Weeks'),
-                  style: const TextStyle(fontSize: 18),
                 ),
                 TextFormField(
                   controller: _bioController,

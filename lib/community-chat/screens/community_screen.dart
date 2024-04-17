@@ -101,7 +101,7 @@ class CommunityScreen extends ConsumerWidget {
                           Padding(
                             padding: const EdgeInsets.only(top: 10, bottom: 10),
                             child:
-                                Text('PregMoms: ${community.members.length}'),
+                                Text('Green Members: ${community.members.length}'),
                           ),
                           if (community.members.contains(user.uid))
                             SubButton(

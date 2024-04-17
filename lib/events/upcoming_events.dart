@@ -42,6 +42,7 @@ class _UpcomingEventsState extends State<UpcomingEvents> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(
@@ -57,58 +58,59 @@ class _UpcomingEventsState extends State<UpcomingEvents> {
         centerTitle: false,
         backgroundColor: primaryColor,
       ),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 5.0, right: 5.0),
-        child: FloatingActionButton(
-          onPressed: () {
-            showModalBottomSheet<void>(
-              context: context,
-              builder: (BuildContext context) {
-                return InstaShareBottomSheet();
-              },
-            );
-          },
-          backgroundColor: Colors.red,
-          foregroundColor: boxColor,
-          highlightElevation: 50,
-          child: Icon(
-            Icons.warning_outlined,
-          ),
-        ),
-      ),
+      // floatingActionButton: Padding(
+      //   padding: const EdgeInsets.only(bottom: 5.0, right: 5.0),
+      //   child: FloatingActionButton(
+      //     onPressed: () {
+      //       showModalBottomSheet<void>(
+      //         context: context,
+      //         builder: (BuildContext context) {
+      //           return InstaShareBottomSheet();
+      //         },
+      //       );
+      //     },
+      //     backgroundColor: Colors.red,
+      //     foregroundColor: boxColor,
+      //     highlightElevation: 50,
+      //     child: Icon(
+      //       Icons.warning_outlined,
+      //     ),
+      //   ),
+      // ),
       body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.all(20.0),
-          child: Column(
-            children: [
-              TextField(
-                controller: titleController,
-                decoration: InputDecoration(labelText: 'Upcoming Event Title'),
-              ),
-              TextField(
-                controller: descriptionController,
-                decoration: InputDecoration(labelText: 'Event Description'),
-              ),
-              TextField(
-                controller: timeController,
-                decoration: InputDecoration(labelText: 'Time'),
-              ),
-              TextField(
-                controller: dateController,
-                decoration: InputDecoration(labelText: 'Date'),
-              ),
-              TextField(
-                controller: placeController,
-                decoration: InputDecoration(labelText: 'Place'),
-              ),
-              SizedBox(height: 20),
-              MainButton(
-                onPressed: addEvent,
-                title: 'Add your event',
-              ),
-              SizedBox(height: 20),
-              Expanded(
-                child: ListView.builder(
+        child: SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.all(20.0),
+            child: Column(
+              children: [
+                TextField(
+                  controller: titleController,
+                  decoration: InputDecoration(labelText: 'Upcoming Event Title'),
+                ),
+                TextField(
+                  controller: descriptionController,
+                  decoration: InputDecoration(labelText: 'Event Description'),
+                ),
+                TextField(
+                  controller: timeController,
+                  decoration: InputDecoration(labelText: 'Time'),
+                ),
+                TextField(
+                  controller: dateController,
+                  decoration: InputDecoration(labelText: 'Date'),
+                ),
+                TextField(
+                  controller: placeController,
+                  decoration: InputDecoration(labelText: 'Place'),
+                ),
+                SizedBox(height: 20),
+                MainButton(
+                  onPressed: addEvent,
+                  title: 'Add your event',
+                ),
+                SizedBox(height: 20),
+                ListView.builder(
+                  shrinkWrap: true,
                   itemCount: events.length,
                   itemBuilder: (context, index) {
                     final event = events[index];
@@ -122,14 +124,22 @@ class _UpcomingEventsState extends State<UpcomingEvents> {
                       ),
                       child: ListTile(
                         title: Text(event.title),
+                        subtitle: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Description: ${event.description}'),
+                            Text('Time: ${event.time}'),
+                            Text('Date: ${event.date}'),
+                            Text('Place: ${event.place}'),
+                          ],
+                        ),
                         tileColor: boxColor,
-                        subtitle: Text('${event.time}, ${event.date}, ${event.place}'),
                       ),
                     );
                   },
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
