@@ -67,7 +67,7 @@ class PostController extends StateNotifier<bool> {
     state = true;
     String postId = Uuid().v1();
     DocumentReference<Map<String, dynamic>> _reference =
-        FirebaseFirestore.instance.collection('users').doc(userId);
+        FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(userId);
     DocumentSnapshot userData = await _reference.get();
     DateTime now = DateTime.now();
     final Post post = Post(
@@ -106,7 +106,7 @@ class PostController extends StateNotifier<bool> {
     state = true;
     String postId = Uuid().v1();
     DocumentReference<Map<String, dynamic>> _reference =
-        FirebaseFirestore.instance.collection('users').doc(userId);
+        FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(userId);
     DocumentSnapshot userData = await _reference.get();
     DateTime now = DateTime.now();
     final Post post = Post(
@@ -145,7 +145,7 @@ class PostController extends StateNotifier<bool> {
     state = true;
     String postId = Uuid().v1();
     DocumentReference<Map<String, dynamic>> _reference =
-        FirebaseFirestore.instance.collection('users').doc(userId);
+        FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(userId);
     DocumentSnapshot userData = await _reference.get();
 
     final imageRes = await _storageRepository.storeFile(
@@ -192,7 +192,7 @@ class PostController extends StateNotifier<bool> {
     state = true;
     String postId = Uuid().v1();
     DocumentReference<Map<String, dynamic>> _reference =
-        FirebaseFirestore.instance.collection('users').doc(userId);
+        FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(userId);
     DocumentSnapshot userData = await _reference.get();
     DateTime now = DateTime.now();
     final Post post = Post(
@@ -225,7 +225,7 @@ class PostController extends StateNotifier<bool> {
 
   banUser(BuildContext context, String userId, String type) async {
     DocumentReference<Map<String, dynamic>> _reference =
-        FirebaseFirestore.instance.collection('users').doc(userId);
+        FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(userId);
     DocumentSnapshot userData = await _reference.get();
     DateTime now = DateTime.now();
     if (userData['strikeCount'] < 2) {
@@ -279,7 +279,7 @@ class PostController extends StateNotifier<bool> {
     state = true;
     String postId = Uuid().v1();
     DocumentReference<Map<String, dynamic>> _reference =
-        FirebaseFirestore.instance.collection('users').doc(userId);
+        FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(userId);
     DocumentSnapshot userData = await _reference.get();
     DateTime now = DateTime.now();
     final Post post = Post(
@@ -320,7 +320,7 @@ class PostController extends StateNotifier<bool> {
     state = true;
     String postId = Uuid().v1();
     DocumentReference<Map<String, dynamic>> _reference =
-        FirebaseFirestore.instance.collection('users').doc(userId);
+        FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(userId);
     DocumentSnapshot userData = await _reference.get();
 
     final imageRes = await _storageRepository.storeFile(
@@ -366,7 +366,7 @@ class PostController extends StateNotifier<bool> {
     required String userId,
   }) async {
     DocumentReference<Map<String, dynamic>> _reference =
-        FirebaseFirestore.instance.collection('users').doc(userId);
+        FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(userId);
     DocumentSnapshot userData = await _reference.get();
     String commentId = const Uuid().v1();
     DateTime now = DateTime.now();
@@ -419,7 +419,7 @@ class PostController extends StateNotifier<bool> {
     required String userId,
   }) async {
     DocumentReference<Map<String, dynamic>> _reference =
-        FirebaseFirestore.instance.collection('users').doc(userId);
+        FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(userId);
     DocumentSnapshot userData = await _reference.get();
     String commentId = const Uuid().v1();
     DateTime now = DateTime.now();

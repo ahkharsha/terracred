@@ -19,7 +19,7 @@ class VolunteerProfileDrawer extends ConsumerWidget {
             padding: EdgeInsets.symmetric(vertical: 20.0),
             child: StreamBuilder<DocumentSnapshot>(
               stream: FirebaseFirestore.instance
-                  .collection('users')
+                  .collection('backend').doc('terracred').collection('users')
                   .doc(FirebaseAuth.instance.currentUser!.uid)
                   .snapshots(),
               builder: (BuildContext context,

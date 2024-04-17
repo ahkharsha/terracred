@@ -27,7 +27,7 @@ class _CommunityPostState extends ConsumerState<CommunityPost> {
 
   Future<void> fetchCommunityFromFirebase() async {
     QuerySnapshot querySnapshot = await firestore
-        .collection('communities')
+        .collection('backend').doc('terracred').collection('communities')
         .where('name', isEqualTo: widget.communityName)
         .get();
 

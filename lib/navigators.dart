@@ -125,6 +125,18 @@ navigateToAddContacts(BuildContext context) {
   Routemaster.of(context).push('/add-contacts');
 }
 
+navigateToUpcomingEvents(BuildContext context) {
+  Routemaster.of(context).push('/upcoming-events');
+}
+
+navigateToOngoingEvents(BuildContext context) {
+  Routemaster.of(context).push('/ongoing-events');
+}
+
+navigateToPastEvents(BuildContext context) {
+  Routemaster.of(context).push('/past-events');
+}
+
 navigateToMusicList(BuildContext context) {
   Routemaster.of(context).push('/music');
 }

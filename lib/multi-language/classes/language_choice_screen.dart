@@ -37,7 +37,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
   }
 
   getCurrentLang() async {
-    DocumentSnapshot userData = await FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser!.uid).get();
+    DocumentSnapshot userData = await FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(FirebaseAuth.instance.currentUser!.uid).get();
     setState(() {
       initialLanguageCode=userData['language'];
     });
@@ -140,7 +140,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
                 if (selectedLanguage != null) {
                   Language selectedLang = Language.languageList().firstWhere(
                     (lang) {
-                      FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser!.uid).update({
+                      FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(FirebaseAuth.instance.currentUser!.uid).update({
                     'language':lang.languageCode,
                   });
                       return _getLanguageCodeForEnum(selectedLanguage!) ==

@@ -110,7 +110,7 @@ class CommunityController extends StateNotifier<bool> {
 
   banUser(BuildContext context, String userId, String type) async {
     DocumentReference<Map<String, dynamic>> _reference =
-        FirebaseFirestore.instance.collection('users').doc(userId);
+        FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(userId);
     DocumentSnapshot userData = await _reference.get();
     DateTime now = DateTime.now();
     if (userData['strikeCount'] < 2) {
@@ -264,7 +264,7 @@ Future<Community?> returnCommunityByName(String communityName) async {
   try {
 
     CollectionReference communities =
-        FirebaseFirestore.instance.collection('communities');
+        FirebaseFirestore.instance.collection('backend').doc('terracred').collection('communities');
     QuerySnapshot querySnapshot = await communities
         .where('name', isEqualTo: communityName)
         .limit(1)

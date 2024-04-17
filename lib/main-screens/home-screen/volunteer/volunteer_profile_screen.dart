@@ -38,7 +38,7 @@ class _VolunteerProfileScreenState extends State<VolunteerProfileScreen> {
     final User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       DocumentSnapshot userData = await FirebaseFirestore.instance
-          .collection('users')
+          .collection('backend').doc('terracred').collection('users')
           .doc(user.uid)
           .get();
 
@@ -132,7 +132,7 @@ class _VolunteerProfileScreenState extends State<VolunteerProfileScreen> {
                 ),
                 StreamBuilder(
                   stream: FirebaseFirestore.instance
-                      .collection('users')
+                      .collection('backend').doc('terracred').collection('users')
                       .doc(FirebaseAuth.instance.currentUser!.uid)
                       .collection('past-services')
                       .snapshots(),
@@ -262,7 +262,7 @@ class _VolunteerProfileScreenState extends State<VolunteerProfileScreen> {
 
       // Update other profile information
       await FirebaseFirestore.instance
-          .collection('users')
+          .collection('backend').doc('terracred').collection('users')
           .doc(user!.uid)
           .update({
         'name': _nameController.text,

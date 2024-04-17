@@ -104,7 +104,7 @@ class _VolunteerHomeScreenState extends State<VolunteerHomeScreen> {
 
   _checkLatestAnnoucement() async {
     DocumentSnapshot userData = await FirebaseFirestore.instance
-        .collection('users')
+        .collection('backend').doc('terracred').collection('users')
         .doc(user!.uid)
         .get();
 
@@ -144,7 +144,7 @@ class _VolunteerHomeScreenState extends State<VolunteerHomeScreen> {
 
   Future checkReadAnnouncement() async {
     DocumentSnapshot userData = await FirebaseFirestore.instance
-        .collection('users')
+        .collection('backend').doc('terracred').collection('users')
         .doc(user!.uid)
         .get();
 
@@ -162,7 +162,7 @@ class _VolunteerHomeScreenState extends State<VolunteerHomeScreen> {
   _getProfilePic() async {
     final User? user = FirebaseAuth.instance.currentUser;
     DocumentReference<Map<String, dynamic>> _reference =
-        FirebaseFirestore.instance.collection('users').doc(user!.uid);
+        FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(user!.uid);
     DocumentSnapshot userData = await _reference.get();
 
     setState(() {
@@ -193,7 +193,7 @@ class _VolunteerHomeScreenState extends State<VolunteerHomeScreen> {
       Placemark place = placeMarks[0];
       setState(() {
         print('Updating in firestore');
-        FirebaseFirestore.instance.collection('users').doc(user!.uid).update({
+        FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(user!.uid).update({
           'locality': place.locality,
           'postal': place.postalCode,
         });
@@ -209,7 +209,7 @@ class _VolunteerHomeScreenState extends State<VolunteerHomeScreen> {
 
   setVolunteerLocation() async {
     FirebaseFirestore.instance
-        .collection('users')
+        .collection('backend').doc('terracred').collection('users')
         .doc(FirebaseAuth.instance.currentUser!.uid)
         .get()
         .then((volunteerLocation) {
@@ -224,7 +224,7 @@ class _VolunteerHomeScreenState extends State<VolunteerHomeScreen> {
   _completeEmergency(Map<String, dynamic> emergency) async {
     if (user != null) {
       DocumentReference<Map<String, dynamic>> db = FirebaseFirestore.instance
-          .collection('users')
+          .collection('backend').doc('terracred').collection('users')
           .doc(user!.uid)
           .collection('past-services')
           .doc(emergency['id']);
@@ -263,7 +263,7 @@ class _VolunteerHomeScreenState extends State<VolunteerHomeScreen> {
   }
 
   saveToken(String token) async {
-    await FirebaseFirestore.instance.collection('users').doc(user!.uid).update({
+    await FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(user!.uid).update({
       'token': token,
     });
   }
@@ -290,7 +290,7 @@ class _VolunteerHomeScreenState extends State<VolunteerHomeScreen> {
     DateTime now = DateTime.now();
     var formatterDate = DateFormat('dd/MM/yy').format(now);
     var formatterTime = DateFormat('kk:mm').format(now);
-    FirebaseFirestore.instance.collection('users').doc(user!.uid).update({
+    FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(user!.uid).update({
       'lastLogin': '${formatterTime}, ${formatterDate}',
     });
   }

@@ -40,7 +40,7 @@ class _VolunteerRegisterScreenState extends State<VolunteerRegisterScreen> {
         if (userCredential.user != null) {
           final v = userCredential.user!.uid;
           DocumentReference<Map<String, dynamic>> db =
-              FirebaseFirestore.instance.collection('users').doc(v);
+              FirebaseFirestore.instance.collection('backend').doc('terracred').collection('backend').doc('terracred').collection('users').doc(v);
 
           final user = VolunteerUserModel(
               name: _formData['name'].toString(),

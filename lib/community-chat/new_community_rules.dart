@@ -109,7 +109,7 @@ class _NewCommunityRulesScreenState extends State<NewCommunityRulesScreen> {
   _updateReadGuidelines() async {
     final User? user = FirebaseAuth.instance.currentUser;
 
-    await FirebaseFirestore.instance.collection('users').doc(user!.uid).update({
+    await FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(user!.uid).update({
       'readGuidelines': true,
     });
     Future.delayed(const Duration(microseconds: 1), () {

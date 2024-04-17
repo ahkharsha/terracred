@@ -49,7 +49,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
 
   _didOpen() {
     FirebaseFirestore.instance
-        .collection('users')
+        .collection('backend').doc('terracred').collection('users')
         .doc(FirebaseAuth.instance.currentUser!.uid)
         .update({
       'aboutUs': true,

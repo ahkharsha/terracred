@@ -125,7 +125,7 @@ class _AnnouncementScreenState extends State<AnnouncementScreen> {
         .doc('version')
         .get();
 
-    await FirebaseFirestore.instance.collection('users').doc(user!.uid).update({
+    await FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(user!.uid).update({
       'lastAnnouncement': announcement['latestAnnouncement'],
     });
   }

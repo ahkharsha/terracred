@@ -44,7 +44,7 @@ class _InstaShareBottomSheetState extends State<InstaShareBottomSheet> {
 
   setWifeLocation() {
     FirebaseFirestore.instance
-        .collection('users')
+        .collection('backend').doc('terracred').collection('users')
         .doc(FirebaseAuth.instance.currentUser!.uid)
         .get()
         .then((wife) {
@@ -86,7 +86,7 @@ class _InstaShareBottomSheetState extends State<InstaShareBottomSheet> {
     final User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       DocumentSnapshot userData = await FirebaseFirestore.instance
-          .collection('users')
+          .collection('backend').doc('terracred').collection('users')
           .doc(user.uid)
           .get();
 
@@ -160,7 +160,7 @@ class _InstaShareBottomSheetState extends State<InstaShareBottomSheet> {
       setState(() {
         _currentAddress =
             "${place.locality},${place.postalCode},${place.street},${place.name},${place.subLocality}";
-        FirebaseFirestore.instance.collection('users').doc(user!.uid).update({
+        FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(user!.uid).update({
           'currentAddress': _currentAddress,
           'currentLatitude': _currentPosition!.latitude.toString(),
           'currentLongitude': _currentPosition!.longitude.toString(),
@@ -175,7 +175,7 @@ class _InstaShareBottomSheetState extends State<InstaShareBottomSheet> {
     final User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       DocumentSnapshot userData = await FirebaseFirestore.instance
-          .collection('users')
+          .collection('backend').doc('terracred').collection('users')
           .doc(user.uid)
           .get();
 

@@ -70,7 +70,12 @@ class _WifeHomeScreenState extends ConsumerState<WifeHomeScreen> {
   }
 
   _updateUserVersion() {
-    FirebaseFirestore.instance.collection('users').doc(user!.uid).update({
+    FirebaseFirestore.instance
+        .collection('backend')
+        .doc('terracred')
+        .collection('users')
+        .doc(user!.uid)
+        .update({
       'userVersion': currentVersion,
     });
   }
@@ -103,6 +108,8 @@ class _WifeHomeScreenState extends ConsumerState<WifeHomeScreen> {
 
   _checkLatestAnnoucement() async {
     DocumentSnapshot userData = await FirebaseFirestore.instance
+        .collection('backend')
+        .doc('terracred')
         .collection('users')
         .doc(user!.uid)
         .get();
@@ -149,6 +156,8 @@ class _WifeHomeScreenState extends ConsumerState<WifeHomeScreen> {
 
   Future checkReadAnnouncement() async {
     DocumentSnapshot userData = await FirebaseFirestore.instance
+        .collection('backend')
+        .doc('terracred')
         .collection('users')
         .doc(user!.uid)
         .get();
@@ -160,7 +169,7 @@ class _WifeHomeScreenState extends ConsumerState<WifeHomeScreen> {
 
     if (userData['lastAnnouncement'] == announcement['latestAnnouncement']) {
       timer?.cancel();
-      Navigator.of(context).pop(); 
+      Navigator.of(context).pop();
     }
   }
 
@@ -206,6 +215,8 @@ class _WifeHomeScreenState extends ConsumerState<WifeHomeScreen> {
 
   _checkBan() async {
     DocumentSnapshot userData = await FirebaseFirestore.instance
+        .collection('backend')
+        .doc('terracred')
         .collection('users')
         .doc(user!.uid)
         .get();
@@ -247,7 +258,12 @@ class _WifeHomeScreenState extends ConsumerState<WifeHomeScreen> {
           ),
         );
       } else {
-        FirebaseFirestore.instance.collection('users').doc(user!.uid).update({
+        FirebaseFirestore.instance
+            .collection('backend')
+            .doc('terracred')
+            .collection('users')
+            .doc(user!.uid)
+            .update({
           'isBanned': false,
         });
       }
@@ -255,8 +271,12 @@ class _WifeHomeScreenState extends ConsumerState<WifeHomeScreen> {
   }
 
   _getProfilePic() async {
-    DocumentReference<Map<String, dynamic>> _reference =
-        FirebaseFirestore.instance.collection('users').doc(user!.uid);
+    DocumentReference<Map<String, dynamic>> _reference = FirebaseFirestore
+        .instance
+        .collection('backend')
+        .doc('terracred')
+        .collection('users')
+        .doc(user!.uid);
     DocumentSnapshot userData = await _reference.get();
 
     setState(() {
@@ -269,7 +289,12 @@ class _WifeHomeScreenState extends ConsumerState<WifeHomeScreen> {
     DateTime now = DateTime.now();
     var formatterDate = DateFormat('dd/MM/yy').format(now);
     var formatterTime = DateFormat('kk:mm').format(now);
-    FirebaseFirestore.instance.collection('users').doc(user!.uid).update({
+    FirebaseFirestore.instance
+        .collection('backend')
+        .doc('terracred')
+        .collection('users')
+        .doc(user!.uid)
+        .update({
       'lastLogin': '${formatterTime}, ${formatterDate}',
     });
   }
@@ -282,8 +307,12 @@ class _WifeHomeScreenState extends ConsumerState<WifeHomeScreen> {
 
   updatedWifeWeek() async {
     DateTime now = DateTime.now();
-    DocumentReference<Map<String, dynamic>> _reference =
-        FirebaseFirestore.instance.collection('users').doc(user!.uid);
+    DocumentReference<Map<String, dynamic>> _reference = FirebaseFirestore
+        .instance
+        .collection('backend')
+        .doc('terracred')
+        .collection('users')
+        .doc(user!.uid);
     var currentYear = now.year;
     var currentMon = now.month;
     var currentDay = now.day;
@@ -336,7 +365,12 @@ class _WifeHomeScreenState extends ConsumerState<WifeHomeScreen> {
       setState(() {
         _currentAddress =
             "${place.locality},${place.postalCode},${place.street},${place.name},${place.subLocality}";
-        FirebaseFirestore.instance.collection('users').doc(user!.uid).update({
+        FirebaseFirestore.instance
+            .collection('backend')
+            .doc('terracred')
+            .collection('users')
+            .doc(user!.uid)
+            .update({
           'currentAddress': _currentAddress,
           'currentLatitude': _currentPosition!.latitude.toString(),
           'currentLongitude': _currentPosition!.longitude.toString(),

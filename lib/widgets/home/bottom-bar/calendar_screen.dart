@@ -36,7 +36,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
     final User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       DocumentSnapshot userData = await FirebaseFirestore.instance
-          .collection('users')
+          .collection('backend').doc('terracred').collection('users')
           .doc(user.uid)
           .get();
 

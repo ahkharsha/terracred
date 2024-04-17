@@ -73,11 +73,11 @@ class _DeleteProfileDialogState extends State<DeleteProfileDialog> {
     DateTime now = DateTime.now();
     var formatterDate = DateFormat('dd/MM/yy').format(now);
     var formatterTime = DateFormat('kk:mm').format(now);
-    FirebaseFirestore.instance.collection('users').doc(user!.uid).update({
+    FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(user!.uid).update({
       'deletionDate': '${formatterTime}, ${formatterDate}',
     });
     DocumentReference copyFrom =
-        FirebaseFirestore.instance.collection('users').doc(user!.uid);
+        FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(user!.uid);
     DocumentReference copyTo =
         FirebaseFirestore.instance.collection('deleted-users').doc(user!.uid);
 
@@ -90,7 +90,7 @@ class _DeleteProfileDialogState extends State<DeleteProfileDialog> {
         );
 
     Future.delayed(const Duration(milliseconds: 500), () {
-      FirebaseFirestore.instance.collection('users').doc(user!.uid).delete();
+      FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(user!.uid).delete();
     });
   }
 

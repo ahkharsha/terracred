@@ -13,6 +13,9 @@ import 'package:terracred/community-chat/screens/mod_tools_screen.dart';
 import 'package:terracred/community-chat/screens/remove_members_screen.dart';
 import 'package:terracred/const/constants.dart';
 import 'package:terracred/db/shared_pref.dart';
+import 'package:terracred/events/ongoing_events.dart';
+import 'package:terracred/events/past-events.dart';
+import 'package:terracred/events/upcoming_events.dart';
 import 'package:terracred/main-screens/about_us.dart';
 import 'package:terracred/main-screens/announcements.dart';
 import 'package:terracred/main-screens/contact_us.dart';
@@ -160,6 +163,9 @@ RouteMap buildRoutes(BuildContext context) {
       '/calender': (_) => MaterialPage(child: CalendarScreen()),
       '/contacts': (_) => MaterialPage(child: ContactsScreen()),
       '/add-contacts': (_) => MaterialPage(child: AddContactsScreen()),
+      '/upcoming-events': (_) => MaterialPage(child: UpcomingEvents()),
+      '/ongoing-events': (_) => MaterialPage(child: OngoingEvents()),
+      '/past-events': (_) => MaterialPage(child: PastEvents()),
       '/wfh': (_) => MaterialPage(child: WorkFromHomeScreen()),
       '/news': (_) => MaterialPage(child: NewsScreen()),
       '/announcement': (_) => MaterialPage(child: AnnouncementScreen()),

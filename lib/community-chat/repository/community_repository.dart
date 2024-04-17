@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fpdart/fpdart.dart';
-import 'package:terracred/const/firebase_constants.dart';
 import 'package:terracred/failure.dart';
 import 'package:terracred/model/community.dart';
 import 'package:terracred/model/post.dart';
@@ -174,10 +173,10 @@ class CommunityRepository {
   
 
   CollectionReference get _posts =>
-      _firestore.collection(FirebaseConstants.postsCollection);
+      _firestore.collection('backend').doc('terracred').collection('posts');
   CollectionReference get _communities =>
-      _firestore.collection(FirebaseConstants.communitiesCollection);
+      _firestore.collection('backend').doc('terracred').collection('communities');
 
   CollectionReference get _flaggedCommunities =>
-      _firestore.collection(FirebaseConstants.flagCommunitiesCollection);
+      _firestore.collection('backend').doc('terracred').collection('flagged-communities');
 }

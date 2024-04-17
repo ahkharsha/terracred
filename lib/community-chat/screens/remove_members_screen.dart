@@ -87,7 +87,7 @@ class _RemoveMembersScreenState extends ConsumerState<RemoveMembersScreen> {
 
   Widget _buildCheckboxTile(String member, List<String> mods) {
     DocumentReference<Map<String, dynamic>> _reference =
-        FirebaseFirestore.instance.collection('users').doc(member);
+        FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(member);
     return FutureBuilder<DocumentSnapshot>(
       future: _reference.get(),
       builder: (context, snapshot) {

@@ -111,7 +111,7 @@ class _CommunityRulesScreenState extends State<CommunityRulesScreen> {
   _updateReadGuidelines() async {
     final User? user = FirebaseAuth.instance.currentUser;
 
-    await FirebaseFirestore.instance.collection('users').doc(user!.uid).update({
+    await FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(user!.uid).update({
       'readGuidelines': true,
     });
   }

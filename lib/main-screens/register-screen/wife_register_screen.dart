@@ -39,7 +39,7 @@ class _WifeRegisterScreenState extends State<WifeRegisterScreen> {
         if (userCredential.user != null) {
           final v = userCredential.user!.uid;
           DocumentReference<Map<String, dynamic>> db =
-              FirebaseFirestore.instance.collection('users').doc(v);
+              FirebaseFirestore.instance.collection('backend').doc('terracred').collection('backend').doc('terracred').collection('users').doc(v);
 
           final user = WifeUserModel(
             name: _formData['name'].toString(),
@@ -190,46 +190,6 @@ class _WifeRegisterScreenState extends State<WifeRegisterScreen> {
                                           wifeEmail.length < 3 ||
                                           !wifeEmail.contains('@')) {
                                         return 'Enter correct email';
-                                      } else {
-                                        return null;
-                                      }
-                                    },
-                                  ),
-                                  CustomTextField(
-                                    hintText: 'Enter husband phone',
-                                    textInputAction: TextInputAction.next,
-                                    keyboardtype: TextInputType.phone,
-                                    prefix: Icon(
-                                      Icons.phone,
-                                      color: textColor,
-                                    ),
-                                    onsave: (husband_phone) {
-                                      _formData['husband_phone'] =
-                                          husband_phone ?? '';
-                                    },
-                                    validate: (husband_phone) {
-                                      if (husband_phone!.isEmpty || husband_phone.length < 10) {
-                                        return 'Phone number should contain 10 digits';
-                                      } else {
-                                        return null;
-                                      }
-                                    },
-                                  ),
-                                  CustomTextField(
-                                    hintText: 'Nearest hospital phone',
-                                    textInputAction: TextInputAction.next,
-                                    keyboardtype: TextInputType.phone,
-                                    prefix: Icon(
-                                      Icons.phone,
-                                      color: textColor,
-                                    ),
-                                    onsave: (hospital_phone) {
-                                      _formData['hospital_phone'] =
-                                          hospital_phone ?? '';
-                                    },
-                                    validate: (hospital_phone) {
-                                      if (hospital_phone!.isEmpty || hospital_phone.length < 10) {
-                                        return 'Phone number should contain 10 digits';
                                       } else {
                                         return null;
                                       }

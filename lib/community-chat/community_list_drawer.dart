@@ -22,7 +22,7 @@ class CommunityDrawer extends ConsumerWidget {
             ),
             StreamBuilder<QuerySnapshot>(
               stream: FirebaseFirestore.instance
-                  .collection('communities')
+                  .collection('backend').doc('terracred').collection('communities')
                   .snapshots(),
               builder: (BuildContext context,
                   AsyncSnapshot<QuerySnapshot> snapshot) {

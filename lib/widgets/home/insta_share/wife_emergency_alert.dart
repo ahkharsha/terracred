@@ -33,11 +33,11 @@ class _WifeEmergencyScreenState extends State<WifeEmergencyScreen> {
 
   _sendVolunteerNotification() async {
     final QuerySnapshot<Map<String, dynamic>> userQuery =
-        await FirebaseFirestore.instance.collection('users').get();
+        await FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').get();
 
     final DocumentSnapshot<Map<String, dynamic>> wifeData =
         await FirebaseFirestore.instance
-            .collection('users')
+            .collection('backend').doc('terracred').collection('users')
             .doc(user!.uid)
             .get();
 

@@ -32,7 +32,9 @@ class _LoginScreenState extends State<LoginScreen> {
               password: _formData['password'].toString());
       if (userCredential.user != null) {
         FirebaseFirestore.instance
-            .collection('users')
+            .collection('backend')
+            .doc('terracred')
+            .collection('backend').doc('terracred').collection('users')
             .doc(userCredential.user!.uid)
             .get()
             .then((userData) {
@@ -85,14 +87,15 @@ class _LoginScreenState extends State<LoginScreen> {
               isLoading
                   ? progressIndicator(context)
                   : Center(
-                    child: SingleChildScrollView(
+                      child: SingleChildScrollView(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Container(
                               height: MediaQuery.of(context).size.height * 0.3,
                               child: Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
                                 children: [
                                   Text(
                                     'User Login',
@@ -177,7 +180,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                     MainButton(
                                         title: 'Login',
                                         onPressed: () {
-                                          if (_formKey.currentState!.validate()) {
+                                          if (_formKey.currentState!
+                                              .validate()) {
                                             _onSubmit();
                                           }
                                         }),
@@ -191,17 +195,19 @@ class _LoginScreenState extends State<LoginScreen> {
                                 children: [
                                   SubButton(
                                       title: 'New user? Sign up',
-                                      onPressed: () => navigateToRegisterSelect(context)),
+                                      onPressed: () =>
+                                          navigateToRegisterSelect(context)),
                                   SubButton(
                                       title: 'Forgot password',
-                                      onPressed: () => navigateToForgotPassword(context)),
+                                      onPressed: () =>
+                                          navigateToForgotPassword(context)),
                                 ],
                               ),
                             ),
                           ],
                         ),
                       ),
-                  ),
+                    ),
             ],
           ),
         ),

@@ -48,7 +48,7 @@ class _AddModsScreenState extends ConsumerState<AddModsScreen> {
 
   Future<CheckboxListTile> _buildCheckboxTile(String member) async {
     DocumentReference<Map<String, dynamic>> _reference =
-        FirebaseFirestore.instance.collection('users').doc(member);
+        FirebaseFirestore.instance.collection('backend').doc('terracred').collection('users').doc(member);
     DocumentSnapshot userData = await _reference.get();
 
     String name = userData['name'];

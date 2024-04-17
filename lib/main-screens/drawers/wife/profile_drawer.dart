@@ -26,7 +26,7 @@ class WifeProfileDrawer extends ConsumerWidget {
                   ),
                   StreamBuilder<DocumentSnapshot>(
                     stream: FirebaseFirestore.instance
-                        .collection('users')
+                        .collection('backend').doc('terracred').collection('users')
                         .doc(FirebaseAuth.instance.currentUser!.uid)
                         .snapshots(),
                     builder: (BuildContext context,

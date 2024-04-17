@@ -40,7 +40,7 @@ class _CommunityHomeState extends ConsumerState<CommunityHome> {
   _checkReadGuidelines() async {
     final User? user = FirebaseAuth.instance.currentUser;
     DocumentSnapshot userData = await FirebaseFirestore.instance
-        .collection('users')
+        .collection('backend').doc('terracred').collection('users')
         .doc(user!.uid)
         .get();
 

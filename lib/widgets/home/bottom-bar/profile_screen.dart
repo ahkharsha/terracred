@@ -42,7 +42,7 @@ class _WifeProfileScreenState extends State<WifeProfileScreen> {
     final User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       DocumentSnapshot userData = await FirebaseFirestore.instance
-          .collection('users')
+          .collection('backend').doc('terracred').collection('users')
           .doc(user.uid)
           .get();
 
@@ -261,7 +261,7 @@ class _WifeProfileScreenState extends State<WifeProfileScreen> {
       var current_day = now.day;
 
       await FirebaseFirestore.instance
-          .collection('users')
+          .collection('backend').doc('terracred').collection('users')
           .doc(user!.uid)
           .update({
         'weekUpdatedDay': current_day,
@@ -289,7 +289,7 @@ class _WifeProfileScreenState extends State<WifeProfileScreen> {
 
       // Update other profile information
       await FirebaseFirestore.instance
-          .collection('users')
+          .collection('backend').doc('terracred').collection('users')
           .doc(user!.uid)
           .update({
         'name': _nameController.text,
