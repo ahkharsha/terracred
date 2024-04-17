@@ -503,7 +503,7 @@ class _VolunteerHomeScreenState extends State<VolunteerHomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "pregAthI",
+          "TerraCred",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.white,
