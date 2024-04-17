@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.SEND_SMS"/>
 
     <application
-        android:label="pregAthI"
+        android:label="Terracred"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

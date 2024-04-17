@@ -21,7 +21,8 @@ class DisplayVolunteerRegister extends StatelessWidget {
             width: MediaQuery.of(context).size.width * 0.9,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-               color: boxColor
+              color: boxColor,
+              border: Border.all(color: Colors.black),
             ),
             child: Padding(
               padding: const EdgeInsets.all(10.0),
@@ -30,8 +31,11 @@ class DisplayVolunteerRegister extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(10),
-                    child: Image.asset('assets/images/login/volunteer.png',height: 80,
-                                  width: 80,),
+                    child: Image.asset(
+                      'assets/images/login/volunteer.png',
+                      height: 80,
+                      width: 80,
+                    ),
                   ),
                   Center(
                     child: Container(
@@ -43,7 +47,7 @@ class DisplayVolunteerRegister extends StatelessWidget {
                       ),
                       child: Center(
                         child: Text(
-                          'Volunteer',
+                          'Stakeholder',
                           style: TextStyle(
                             color: textColor,
                             fontWeight: FontWeight.bold,

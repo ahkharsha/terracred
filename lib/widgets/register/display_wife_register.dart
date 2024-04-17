@@ -21,7 +21,8 @@ class DisplayWifeRegister extends StatelessWidget {
             width: MediaQuery.of(context).size.width * 0.9,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-             color: boxColor
+              color: boxColor,
+              border: Border.all(color: Colors.black),
             ),
             child: Padding(
               padding: const EdgeInsets.all(10.0),
@@ -30,8 +31,11 @@ class DisplayWifeRegister extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(10),
-                    child: Image.asset('assets/images/login/wife.png',height: 80,
-                                  width: 80,),
+                    child: Image.asset(
+                      'assets/images/login/wife.png',
+                      height: 80,
+                      width: 80,
+                    ),
                   ),
                   Center(
                     child: Container(
@@ -43,9 +47,9 @@ class DisplayWifeRegister extends StatelessWidget {
                       ),
                       child: Center(
                         child: Text(
-                          'Mom',
+                          'User',
                           style: TextStyle(
-                            color:textColor,
+                            color: textColor,
                             fontWeight: FontWeight.bold,
                             fontSize: MediaQuery.of(context).size.width * 0.05,
                           ),
@@ -62,4 +66,3 @@ class DisplayWifeRegister extends StatelessWidget {
     );
   }
 }
-

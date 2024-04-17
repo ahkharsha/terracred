@@ -29,17 +29,17 @@ const volunteerProfileDefault =
 const musicImageDefault = 'https://media.wired.com/photos/5926df59f3e2356fd800ab80/master/w_1920,c_limit/GettyImages-543338600-S2.jpg';
 
 // Disha's
-Color primaryColor = Color.fromARGB(255, 174, 110, 165);
+Color primaryColor = Color.fromARGB(255, 110, 174, 110);
 // Color textColor = Color.fromARGB(255, 174, 110, 165);
 
 // Harsha's
 // Color primaryColor = Color.fromARGB(255, 158, 59, 144);
 
 // Final
-Color textColor = Color.fromARGB(255, 93, 11, 82);
+Color textColor = Color.fromARGB(255, 11, 93, 25);
 
 // Color appBgColor=Color.fromARGB(255, 252, 213, 246);
-Color appBgColor = Color.fromARGB(255, 254, 233, 251);
+Color appBgColor = Color.fromARGB(255, 239, 253, 243);
 
 Color boxColor = Colors.white;
 
