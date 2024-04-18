@@ -109,20 +109,32 @@ class NewsItem {
 List<NewsItem> newsItems = [
   NewsItem(
     imageUrl:
-        'https://t2.gstatic.com/licensed-image?q=tbn:ANd9GcShMUjTSwesw4HCPw4DMsnJh-P-LZ48HxAliBMoZAxYgrUujXnpbFHeOyM06Aer0yP-',
-    headline: 'Breaking News: Flutter is Amazing!',
+        'https://images.app.goo.gl/cJxR8oMcypnq6SRg9',
+    headline: 'City Implements New Recycling Program to Reduce Waste and Promote Sustainability',
     linkUrl: 'https://example.com/news1',
   ),
   NewsItem(
     imageUrl:
-        'https://t2.gstatic.com/licensed-image?q=tbn:ANd9GcShMUjTSwesw4HCPw4DMsnJh-P-LZ48HxAliBMoZAxYgrUujXnpbFHeOyM06Aer0yP-',
-    headline: 'New Study Shows Benefits of Flutter Development',
+        'https://images.app.goo.gl/M4Urb8mPN9xacsAc6',
+    headline: 'Government Announces Plan to Invest in Green Infrastructure for Renewable Energy Expansion',
     linkUrl: 'https://example.com/news2',
   ),
   NewsItem(
     imageUrl:
-        'https://t2.gstatic.com/licensed-image?q=tbn:ANd9GcShMUjTSwesw4HCPw4DMsnJh-P-LZ48HxAliBMoZAxYgrUujXnpbFHeOyM06Aer0yP-',
-    headline: 'Flutter 3.0 Release Announced',
+        'https://images.app.goo.gl/suwgfttD29NbG7Xo7',
+    headline: 'Tech Company Launches Eco-Friendly Packaging Solution to Reduce Plastic Waste',
     linkUrl: 'https://example.com/news3',
+  ),
+  NewsItem(
+    imageUrl:
+        'https://images.app.goo.gl/HEyHTjATDqokeC7B6',
+    headline: 'International Collaboration Leads to Historic Agreement on Climate Change Mitigation',
+    linkUrl: 'https://example.com/news4',
+  ),
+  NewsItem(
+    imageUrl:
+        'https://t2.gstatic.com/licensed-image?q=tbn:ANd9GcShMUjTSwesw4HCPw4DMsnJh-P-LZ48HxAliBMoZAxYgrUujXnpbFHeOyM06Aer0yP-',
+    headline: 'Local Community Rallies Together to Restore Urban Green Spaces',
+    linkUrl: 'https://example.com/news5',
   ),
 ];

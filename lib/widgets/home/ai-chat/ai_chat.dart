@@ -54,7 +54,7 @@ class AIChat extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 14.0,right: 14,),
                     child: Text(
-                      translation(context).aboutChat,
+                      'Click to chat with AI about sustainability and more..',
                       style: TextStyle(
                           color: textColor,
                           fontWeight: FontWeight.bold,

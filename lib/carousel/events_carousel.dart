@@ -110,18 +110,24 @@ class EventItem {
 
 List<EventItem> eventItems = [
   EventItem(
-    imageUrl: 'https://t2.gstatic.com/licensed-image?q=tbn:ANd9GcShMUjTSwesw4HCPw4DMsnJh-P-LZ48HxAliBMoZAxYgrUujXnpbFHeOyM06Aer0yP-',
-    eventName: 'Tech Conference 2024',
+    imageUrl: 'https://images.app.goo.gl/PL9JysPZPeuHxj2J8',
+    eventName: 'Earth Day Celebration',
     eventLink: 'https://example.com/event1',
   ),
   EventItem(
-    imageUrl: 'https://t2.gstatic.com/licensed-image?q=tbn:ANd9GcShMUjTSwesw4HCPw4DMsnJh-P-LZ48HxAliBMoZAxYgrUujXnpbFHeOyM06Aer0yP-',
-    eventName: 'Startup Meetup',
+    imageUrl: 'https://images.app.goo.gl/W7nTFC8Hm42hjGsM9',
+    eventName: 'Zero Waste Week',
     eventLink: 'https://example.com/event2',
   ),
   EventItem(
-    imageUrl: 'https://t2.gstatic.com/licensed-image?q=tbn:ANd9GcShMUjTSwesw4HCPw4DMsnJh-P-LZ48HxAliBMoZAxYgrUujXnpbFHeOyM06Aer0yP-',
-    eventName: 'Art Exhibition',
+    imageUrl: 'https://images.app.goo.gl/qD3SU8Jy7vAvTpYk6',
+    eventName: 'Green Energy Expo',
     eventLink: 'https://example.com/event3',
   ),
+  EventItem(
+    imageUrl: 'https://images.app.goo.gl/EeLzUP47hnTvukMb7',
+    eventName: 'Bike to Work Day',
+    eventLink: 'https://example.com/event4',
+  ),
+  
 ];
